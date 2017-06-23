@@ -1,0 +1,29 @@
+{
+  "name": "funureal",
+  "version": "1.0.0",
+  "description": "Funeral App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhester21/FUNureal.git"
+  },
+  "author": "Ageel, Haley, Kim and Jaime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhester21/FUNureal/issues"
+  },
+  "homepage": "https://github.com/hhester21/FUNureal#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mysql": "^2.13.0",
+    "sequelize": "^4.2.0",
+    "underscore": "^1.8.3"
+  }
+}
