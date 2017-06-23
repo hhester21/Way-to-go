@@ -88,6 +88,11 @@ module.exports = function(sequelize, DataTypes) {
           }
         });
       }
+      // associate: function(models) {
+      //   User.hasMany(models.wishes, {
+      //     onDelete: "cascade"
+      //   });
+      // }
     },
     instanceMethods: {
       toPublicJSON: function() {
