@@ -8,12 +8,10 @@ $(document).ready(function(){
   });
 
   $("#login-button-submit").click(function(e) {
-    // e.preventDefault();
     $("#login-modal").modal('toggle');
   });
 
   $("#register-button-submit").click(function(e) {
-    e.preventDefault();
     $("#register-modal").modal('toggle');
   });
 });

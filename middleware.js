@@ -3,7 +3,10 @@ var cryptojs = require('crypto-js');
 module.exports = function(db) {
   return {
     requireAuthentication: function(req, res, next) {
-      var token = req.get('Auth') || '';
+      // console.log("REQUEST header", req.get('Auth'));
+      // var token = req.get('Auth') || '';
+      // var token = localStorage.getItem('authToken') || '';
+      var token = req.cookies.auth;
 
       db.token.findOne({
         where: {
