@@ -96,7 +96,7 @@
               <div class="form-group">
                 <label for="register-password" class="col-sm-2 control-label">Password</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="register-password" name="password" placeholder="Password">
+                  <input type="password" minlength="7" class="form-control" id="register-password" name="password" placeholder="Password">
                 </div>
               </div>
               <div class="form-group">
@@ -112,5 +112,24 @@
       </div>
     </div>
 
+    <div class="container">
+      <% if(success && success.length > 0) { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= success %>
+      </div>
+      <% } %>
+
+      <% if(error && error.length > 0) { %>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= error %>
+      </div>
+      <% } %>
+    </div>
 
 

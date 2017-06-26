@@ -3,9 +3,6 @@ var cryptojs = require('crypto-js');
 module.exports = function(db) {
   return {
     requireAuthentication: function(req, res, next) {
-      // console.log("REQUEST header", req.get('Auth'));
-      // var token = req.get('Auth') || '';
-      // var token = localStorage.getItem('authToken') || '';
       var token = req.cookies.auth;
 
       db.token.findOne({
@@ -21,10 +18,13 @@ module.exports = function(db) {
         return db.user.findByToken(token)
       }).then(function(user) {
         req.user = user;
+        res.locals.error = req.flash('error');
+        res.locals.success = req.flash('success');
+        res.locals.currentUser = user;
         next();
-      }).catch(function() {
-        // res.render("notfound");
-        res.status(401).send();
+      }).catch(function(e) {
+        req.flash('error', 'Please Log in First');
+        res.redirect('/');
       });
     }
   };
