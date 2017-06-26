@@ -11,7 +11,9 @@ module.exports = function(db) {
         }
       }).then(function(tokenInstance) {
         if (!tokenInstance) {
-          throw new Error();
+          // this seems to only happen in landing when app first starts
+          // keep going and render landing
+          return next();
         }
 
         req.token = tokenInstance;

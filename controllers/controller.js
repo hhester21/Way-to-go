@@ -8,7 +8,7 @@ var router = express.Router();
 /**
  * This route is for the landing page
  */
-router.get("/", function(req, res) {
+router.get("/", middleware.requireAuthentication, function(req, res) {
   res.render("landing");
 });
 
@@ -31,7 +31,7 @@ router.get('/wishes', middleware.requireAuthentication, function(req, res) {
  * set in a cookie.
  */
 router.post('/register', function(req, res) {
-  var body = _.pick(req.body, 'email', 'password');
+  var body = _.pick(req.body, 'email', 'password', 'first_name', 'last_name');
 
   db.user.create(body).then(function(user) {
     var userInstance;

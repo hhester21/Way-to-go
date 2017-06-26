@@ -33,6 +33,14 @@ module.exports = function(sequelize, DataTypes) {
         this.setDataValue('salt', salt);
         this.setDataValue('password_hash', hashedPassword);
       }
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   }, {
     hooks: {
