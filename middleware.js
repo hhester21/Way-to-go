@@ -11,9 +11,7 @@ module.exports = function(db) {
         }
       }).then(function(tokenInstance) {
         if (!tokenInstance) {
-          // this seems to only happen in landing when app first starts
-          // keep going and render landing
-          return next();
+          throw new Error();
         }
 
         req.token = tokenInstance;
@@ -27,6 +25,30 @@ module.exports = function(db) {
       }).catch(function(e) {
         req.flash('error', 'Please Log in First');
         res.redirect('/');
+      });
+    },
+    landingAuthentication: function(req, res, next) {
+      var token = req.cookies.auth;
+
+      db.token.findOne({
+        where: {
+          tokenHash: cryptojs.MD5(token).toString()
+        }
+      }).then(function(tokenInstance) {
+        if (!tokenInstance) {
+          throw new Error();
+        }
+
+        req.token = tokenInstance;
+        return db.user.findByToken(token)
+      }).then(function(user) {
+        req.user = user;
+        res.locals.error = req.flash('error');
+        res.locals.success = req.flash('success');
+        res.locals.currentUser = user;
+        req.redirect('/wishes');
+      }).catch(function(e) {
+        next();
       });
     }
   };

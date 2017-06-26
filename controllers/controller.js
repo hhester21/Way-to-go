@@ -8,7 +8,7 @@ var router = express.Router();
 /**
  * This route is for the landing page
  */
-router.get("/", middleware.requireAuthentication, function(req, res) {
+router.get("/", middleware.landingAuthentication, function(req, res) {
   res.render("landing");
 });
 
