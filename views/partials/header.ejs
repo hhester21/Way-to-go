@@ -3,6 +3,7 @@
 <head>
   <title>Way To Go</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -54,21 +55,20 @@
           <div class="modal-body">
             <form class="form-horizontal" action="/login" method="post">
               <div class="form-group">
-                <label for="login-email" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
+                <label for="login-email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-8">
                   <input type="email" class="form-control" id="login-email" name="email" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">
-                <label for="login-password" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
+                <label for="login-password" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-8">
                   <input type="password" class="form-control" id="login-password" name="password" placeholder="Password">
                 </div>
               </div>
               <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" id="login-submit-button" class="btn btn-default">Log In</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="col-sm-offset-3 col-sm-8">
+                  <button type="submit" id="login-submit-button" class="btn btn-default pull-right">Log In</button>
                 </div>
               </div>
             </form>
@@ -90,34 +90,49 @@
           </div>
           <div class="modal-body">
             <form class="form-horizontal" action="/register" method="post">
-              <div class="form-group">
-                <label for="register-email" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" required class="form-control" id="register-email" name="email" placeholder="Email">
+              <div class="form-group required">
+                <label for="register-email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-8 required-field">
+                  <label class="input-label">
+                    <input type="email" required class="form-control" id="register-email" name="email" placeholder="Email">
+                  </label>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="register-password" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" required minlength="7" class="form-control" id="register-password" name="password" placeholder="Password">
+              <div class="form-group required">
+                <label for="register-password" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-8 required-field">
+                  <label class="input-label">
+                    <input type="password" required minlength="7" class="form-control" id="register-password" name="password" placeholder="Password">
+                  </label>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="register-first-name" class="col-sm-2 control-label">First Name</label>
-                <div class="col-sm-10">
-                  <input type="text" required class="form-control" id="register-first-name" name="first_name" placeholder="First Name">
+              <div class="form-group required">
+                <label for="register-first-name" class="col-sm-3 control-label">First Name</label>
+                <div class="col-sm-8 required-field">
+                  <label class="input-label">
+                    <input type="text" required class="form-control" id="register-first-name" name="first_name" placeholder="First Name">
+                  </label>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="register-last-name" class="col-sm-2 control-label">Last Name</label>
-                <div class="col-sm-10">
-                  <input type="text" required class="form-control" id="register-last-name" name="last_name" placeholder="Last Name">
+              <div class="form-group required">
+                <label for="register-last-name" class="col-sm-3 control-label">Last Name</label>
+                <div class="col-sm-8 required-field">
+                  <label class="input-label">
+                    <input type="text" required class="form-control" id="register-last-name" name="last_name" placeholder="Last Name">
+                  </label>
                 </div>
               </div>
+              <!--<div class="form-group required">-->
+                <!--<label for="register-bday" class="col-sm-3 control-label">Birth</label>-->
+                <!--<div class="col-sm-8 required-field">-->
+                  <!--<label class="input-label">-->
+                    <!--<input type="date" required class="form-control" id="register-bday" name="bday">-->
+                  <!--</label>-->
+                <!--</div>-->
+              <!--</div>-->
               <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" id="register-submit-button" class="btn btn-default">Register</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="col-sm-offset-3 col-sm-8">
+                  <button type="submit" id="register-submit-button" class="btn btn-default pull-right">Register</button>
                 </div>
               </div>
             </form>
