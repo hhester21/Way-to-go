@@ -8,9 +8,9 @@ Our options include everything from burial, memorial/ cerimony as well as any sp
 HTML, CSS, Bootstrap, SQL, Javascript,node.js
 
 <h2>Project Cohorts</h2>
-Kimberly Johnson
+<li>Kimberly Johnson
 Haley Hester
 Jaime Rueda
-Ageel Shatry
+Ageel Shatry</li>
 
 Group Project 2 for UT Coding Bootcamp 2017
