@@ -7,7 +7,7 @@ Our options include everything from burial, memorial/ cerimony as well as any sp
 <h2>Languages & technology used</h2>
 HTML, CSS, Bootstrap, SQL, Javascript,node.js
 
-Project Cohorts
+<h2>Project Cohorts</h2>
 Kimberly Johnson
 Haley Hester
 Jaime Rueda
