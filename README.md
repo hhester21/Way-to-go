@@ -13,5 +13,5 @@ HTML, CSS, Bootstrap, SQL, Javascript,node.js
 <li>Jaime Rueda</li>
 <li>Ageel Shatry</li>
 
-
+<br>
 <footer>Group Project 2 for UT Coding Bootcamp 2017</footer>
