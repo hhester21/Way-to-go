@@ -1,3 +1,31 @@
+/*Navigation Style*/
+
+.navbar {
+
+border-radius: 0px;
+}
+
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+    height: 75px;
+}
+/*nav bar header*/
+.navbar-header{
+  padding:15px;
+}
+
+/*.navbar-brand{
+
+  padding:10px;
+}*/
+
+/*Nav bar links changed later*/
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+padding:10px;
+}
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
