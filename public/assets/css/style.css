@@ -1,19 +1,14 @@
-/** {
-    margin: 0;
-    padding: 0;
-}*/
-/*font-family: 'Philosopher', sans-serif;
-font-family: 'Shadows Into Light Two', cursive;
-font-family: 'Montserrat Alternates', sans-serif;*/
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-top: 10px;
-  /* Set the fixed height of the footer here */
-  height: 50px;
-  background-color: #f5f5f5;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
 .header-content {
     text-align: center;
     margin: auto;
@@ -49,4 +44,50 @@ body{
     overflow: hidden;
     top: 0;
     left: 0;
+
+  /* Set the fixed height of the footer here */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10px;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.text-muted {
+  text-align:center;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+
+.form-group.required .required-field:after {
+  content: "*";
+  color: red;
+}
+
+label.input-label {
+  width: 96%;
+  font-weight: 400;
 }

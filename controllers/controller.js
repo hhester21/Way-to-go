@@ -5,64 +5,95 @@ var middleware = require('../middleware.js')(db);
 
 var router = express.Router();
 
-router.get("/", function(req, res) {
+/**
+ * This route is for the landing page
+ */
+router.get("/", middleware.landingAuthentication, function(req, res) {
   res.render("landing");
 });
 
-// REGISTER
-router.post('/users', function(req, res) {
-  // post request comes back with email and password
-  // _.pick gets the email and password elements from the req.body object passed in
-  // we do this in case the request has other "malicious" elements we don't care about
-  var body = _.pick(req.body, 'email', 'password');
+/**
+ * This route is for the wishes page. It will only be available when the
+ * user is logged in
+ */
+router.get('/wishes', middleware.requireAuthentication, function(req, res) {
+  res.render("wishes");
+});
 
-  // inserts into users table with email and password strings.
-  // password isn't really inserted; it's hashed value is
+/***********************************
+ *      AUTHENTICATION ROUTES      *
+ ***********************************/
+/**
+ * This route registers the user and then logs them in.
+ * It first creates a user in the database with the given
+ * email and password, and then authenticates the user.
+ * If authentication is successful, a token is generated and
+ * set in a cookie.
+ */
+router.post('/register', function(req, res) {
+  var body = _.pick(req.body, 'email', 'password', 'first_name', 'last_name');
+
   db.user.create(body).then(function(user) {
-    // user was successfully inserted into the DB
-    // res.json(user.toPublicJSON())
-    res.redirect("/");
+    var userInstance;
+
+    db.user.authenticate(body).then(function(user) {
+      var token = user.generateToken('authentication');
+      userInstance = user;
+
+      return db.token.create({
+        token: token
+      });
+    }).then(function (tokenInstance) {
+      res.cookie('auth', tokenInstance.get('token'));
+      res.redirect('/wishes');
+    }).catch(function() {
+      // wrong email or password
+      res.redirect('/');
+    });
   }, function(e) {
-    res.status(400).json(e);
+    if (e.errors && e.errors[0].message === 'email must be unique') {
+      req.flash('error', 'The email address you have entered is already registered. Please try again.');
+    } else if (e.errors && e.errors[0].message === 'Validation len failed') {
+      req.flash('error', 'Your password must be at least 7 characters long. Please try again.');
+    }
+    res.redirect('/');
   });
 });
 
-// LOGIN
-router.post('/users/login', function(req, res) {
-  // post request comes back with email and password
-  // _.pick gets the email and password elements from the req.body object passed in
-  // we do this in case the request has other "malicious" elements we don't care about
+/**
+ * This route log the user in. It first authenticates the user
+ * by making sure a user with the given email and password
+ * exist in the DB. If they do, a token is generated
+ */
+router.post('/login', function(req, res) {
   var body = _.pick(req.body, 'email', 'password');
   var userInstance;
 
-  // Call User's authenticate Class Method. This basically looks for the email in the DB,
-  // checks is correct using a bcrypt method, and returns if password for email is correct
   db.user.authenticate(body).then(function(user) {
-    // email found in DB and password was correct
-    // Now create token to know from now on this user is doing stuff around the site
     var token = user.generateToken('authentication');
     userInstance = user;
 
-    // insert token into DB and from now on allow user to do stuff only if matching token
-    // is in DB
     return db.token.create({
       token: token
     });
   }).then(function (tokenInstance) {
-    // if token inserted correctly, add token to the header of the request as 'Auth'
-    // for future requests
-    res.header('Auth', tokenInstance.get('token')).render('wishes');
-  }).catch(function() {
-    res.status(401).send();
+    res.cookie('auth', tokenInstance.get('token'));
+    res.redirect('/wishes');
+  }).catch(function(e) {
+    // wrong email or password
+    req.flash('error', 'The email address or password that you entered is not valid');
+    res.redirect('/');
   });
 });
 
-// LOGOUT by deleting token from DB
-router.delete('/users/login', middleware.requireAuthentication, function(req, res) {
-  // Remove token (found in request) from the DB
-  // now user won't be able to see stuff on the website
+/**
+ * This route logs the user off. It first removes the token from the
+ * DB and redirects the user to the landing page.
+ */
+router.get('/logout', middleware.requireAuthentication, function(req, res) {
   req.token.destroy().then(function() {
-    res.status(204).send();
+    req.flash('success', 'You have successfully logged out');
+    res.redirect('/');
   }).catch(function() {
     res.status(500).send();
   });
