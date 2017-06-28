@@ -1,5 +1,4 @@
 /*Navigation Style*/
-
 .navbar {
 
 border-radius: 0px;
@@ -8,21 +7,30 @@ border-radius: 0px;
 .navbar-inverse {
     background-color: #222;
     border-color: #080808;
-    height: 75px;
+    height: 100px;
 }
-/*nav bar header*/
+/*Nav bar header*/
 .navbar-header{
   padding:15px;
 }
 
-/*.navbar-brand{
+.navbar-inverse .navbar-nav>li>a{
 
-  padding:10px;
-}*/
+  font-size:16px;
+  font-weight:bold;
+  color:#ffffff;
 
+}
+
+/*Logo*/
+.navbar-brand>img {
+    display: block;
+    margin-top: -20px;
+}
 /*Nav bar links changed later*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-padding:10px;
+/*padding:10px;*/
+margin-top:18px;
 }
 
 
