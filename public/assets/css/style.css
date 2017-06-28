@@ -40,3 +40,15 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+
+
+.form-group.required .required-field:after {
+  content: "*";
+  color: red;
+}
+
+label.input-label {
+  width: 96%;
+  font-weight: 400;
+}
