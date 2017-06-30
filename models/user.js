@@ -41,6 +41,14 @@ module.exports = function(sequelize, DataTypes) {
     last_name: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    funeral_type: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    funeral_subtype: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   }, {
     hooks: {
@@ -95,12 +103,12 @@ module.exports = function(sequelize, DataTypes) {
             reject();
           }
         });
+      },
+      associate: function(models) {
+        User.hasMany(models.wish, {
+          onDelete: "cascade"
+        });
       }
-      // associate: function(models) {
-      //   User.hasMany(models.wishes, {
-      //     onDelete: "cascade"
-      //   });
-      // }
     },
     instanceMethods: {
       toPublicJSON: function() {

@@ -10,14 +10,18 @@
     <link rel="icon" href="../../favicon.ico">
   <title>Way To Go</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
  <link href="assets/css/style.css" rel="stylesheet">
  <link href="assets/css/album.css" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
  
-
-    <!-- #region Jssor Slider Begin -->
-    <script src="assets/javascript/jquery-1.11.3.min.js" type="text/javascript"></script>
-    <script src="assets/javascript/jssor.slider-25.0.6.min.js" type="text/javascript"></script>
+  <!-- #region Jssor Slider Begin -->
+  <script src="assets/javascript/jquery-1.11.3.min.js" type="text/javascript"></script>
+  <script src="assets/javascript/jssor.slider-25.0.6.min.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Philosopher:400i,700i|Shadows+Into+Light+Two" rel="stylesheet">-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  
 </head>
 <body>
       <script type="text/javascript">
@@ -173,14 +177,6 @@
                   </label>
                 </div>
               </div>
-              <!--<div class="form-group required">-->
-                <!--<label for="register-bday" class="col-sm-3 control-label">Birth</label>-->
-                <!--<div class="col-sm-8 required-field">-->
-                  <!--<label class="input-label">-->
-                    <!--<input type="date" required class="form-control" id="register-bday" name="bday">-->
-                  <!--</label>-->
-                <!--</div>-->
-              <!--</div>-->
               <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-8">
                   <button type="submit" id="register-submit-button" class="btn btn-default pull-right">Register</button>
@@ -193,7 +189,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container message-display">
       <% if(success && success.length > 0) { %>
       <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

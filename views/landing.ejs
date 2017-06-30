@@ -1,14 +1,57 @@
 <% include partials/header %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="content">
-        CONTENT GOES HERE
+<!--<div class="container">-->
+  <section id="landing-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div id="header-text">Way to go</div>
+          <div id="sub-text1">Prepare for the final checkout...</div>
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <form class="form-horizontal" action="/login" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <input type="email" class="form-control" id="login-email-page" name="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group text-center">
+                  <div class="col-sm-12">
+                    <input type="password" class="form-control" id="login-password-page" name="password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group text-center">
+                  <div class="col-sm-12">
+                    <button type="submit" id="login-submit-button" class="btn btn-success btn-lg">Log In</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section id="landing-bottom-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+          <div class="column-text center-text">
+            <h1>Title here</h1>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, voluptas, voluptatum! Ducimus iure, maxime odio saepe sint unde voluptas. Animi delectus fuga iusto non voluptatem? Autem dolorum hic quia ut?</div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <img src="assets/images/partycoffin2.jpg">
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </section>
 
 
 
