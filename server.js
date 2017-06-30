@@ -7,7 +7,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 // imported files
-var routes = require("./controllers/controller.js");
+var authRoutes = require("./controllers/authRoutes.js");
+var wishRoutes = require("./controllers/wishRoutes.js");
 var db = require("./models");
 
 var app = express();
@@ -39,7 +40,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use("/", routes);
+app.use("/", authRoutes);
+app.use("/", wishRoutes);
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function () {

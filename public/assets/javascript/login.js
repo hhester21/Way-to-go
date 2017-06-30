@@ -14,4 +14,5 @@ $(document).ready(function(){
   $("#register-button-submit").click(function(e) {
     $("#register-modal").modal('toggle');
   });
+
 });
