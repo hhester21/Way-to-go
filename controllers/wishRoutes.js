@@ -28,7 +28,8 @@ router.get('/welcome', middleware.requireAuthentication, function(req, res) {
     where: where
   }).then(function(userData) {
     if (!userData.funeral_type) {
-      res.render('funeral-type');
+      // res.render('funeral-type');
+      res.render('welcome');
     } else {
       if (!userData.funeral_subtype) {
         res.render('funeral-sub-type');
@@ -65,19 +66,34 @@ router.get('/wishes', middleware.requireAuthentication, function(req, res) {
  * wishes table and then linked to the logged in user.
  */
 router.post('/wishes', middleware.requireAuthentication, function(req, res) {
-  var wishes = req.body;
+  // set up wishes for DB insertion. Each will have a wish string
+  // and the currently logged in user as its userId
+  var wishes = req.body.fields;
+  for (var i = 0; i < wishes.length; i++) {
+    if (wishes[i] !== '') {
+        wishes[i] = {wish: wishes[i], userId: req.user.get('id')};
+    }
+  }
 
-  db.wish.bulkCreate(wishes).then(function() {
-    return db.wish.findAll();
-  }).then(function(wishes) {
-    var itemsProcessed = 0;
-    wishes.forEach(function(wish, index, array) {
-      db.wish.create(wish).then(function(wish) {
-        itemsProcessed++;
+  var itemsProcessed = 0;
+  // Iterate through each wish and insert it into the wishes table
+  wishes.forEach(function(wish, index, array) {
+    db.wish.create(wish).then(function() {
+      // After inserted, increment number of processed items and
+      // compare it to total number of items to process.
+      itemsProcessed++;
+      if (itemsProcessed === array.length) {
+        // render welcome
+        res.render('welcome');
+      }
+    }, function(e) {
+      // If not successfully inserted, increment number of processed
+      // items and compare it to total number of items to process.
+      itemsProcessed++;
         if (itemsProcessed === array.length) {
-          res.render('review');
+          // render welcome
+          res.render('welcome');
         }
-      });
     });
   });
 });

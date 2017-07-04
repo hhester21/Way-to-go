@@ -1,0 +1,62 @@
+/**************************
+ *  MULTIPLE FORM FIELDS  *
+ **************************/
+.dynamic-form {
+    margin-top: 50px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+
+#wishes-submit-button {
+    margin-top: 15px;
+}
+
+#paper-top-background {
+    background-image: url(../images/pad-top.png);
+    background-size: cover;
+    background-repeat: round;
+    padding: 40px 0px;
+}
+
+div.entry.input-group {
+    background-image: url(../images/pad-middle.png);
+    background-size: cover;
+    background-repeat: round;
+    padding: 15px 60px 15px 65px;
+}
+
+#paper-bottom-background {
+    background-image: url(../images/pad-bottom.png);
+    background-size: cover;
+    background-repeat: round;
+    padding: 40px 0px;
+}
+
+/*************************
+ ***  RESPONSIVE CODE  ***
+ *************************/
+@media screen and (max-width: 1257px) {
+    div.entry.input-group {
+        padding: 15px 65px 15px 70px;
+    }
+}
+
+/*@media screen and (max-width: 980px) {*/
+    /*div.entry.input-group {*/
+        /*padding: 15px 55px 15px 60px;*/
+    /*}*/
+/*}*/
+
+@media screen and (max-width: 768px) {
+    div.entry.input-group {
+        padding: 15px 55px 15px 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.entry.input-group {
+        padding: 15px 25px 15px 30px;
+    }
+}
