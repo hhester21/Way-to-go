@@ -30,7 +30,7 @@ router.post('/register', function(req, res) {
       });
     }).then(function (tokenInstance) {
       res.cookie('auth', tokenInstance.get('token'));
-      res.redirect('/wishes');
+      res.redirect('/welcome');
     }).catch(function() {
       // wrong email or password
       res.redirect('/');
@@ -63,7 +63,7 @@ router.post('/login', function(req, res) {
     });
   }).then(function (tokenInstance) {
     res.cookie('auth', tokenInstance.get('token'));
-    res.redirect('/wishes');
+    res.redirect('/welcome');
   }).catch(function(e) {
     // wrong email or password
     req.flash('error', 'The email address or password that you entered is not valid');

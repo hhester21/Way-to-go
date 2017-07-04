@@ -13,10 +13,13 @@ router.get("/", middleware.landingAuthentication, function(req, res) {
 });
 
 /**
- * This route is for the wishes page. It will only be available when the
- * user is logged in
+ * This route is for the welcome page. It will only be available when the
+ * user is logged in. If user has selected a funeral type, the funeral type
+ * page will be rendered. If it has been selected, but the funeral sub type
+ * hasn't, the funeral sub type page will be rendered. If both have been
+ * selected, the review page will be rendered instead.
  */
-router.get('/wishes', middleware.requireAuthentication, function(req, res) {
+router.get('/welcome', middleware.requireAuthentication, function(req, res) {
   var where = {
     id: req.user.get('id')
   };
@@ -25,10 +28,12 @@ router.get('/wishes', middleware.requireAuthentication, function(req, res) {
     where: where
   }).then(function(userData) {
     if (!userData.funeral_type) {
-      res.render('wishes');
+      res.render('funeral-type');
     } else {
       if (!userData.funeral_subtype) {
-        res.render('second');
+        res.render('funeral-sub-type');
+      } else {
+        res.render('review');
       }
     }
   }, function(e) {
@@ -38,15 +43,43 @@ router.get('/wishes', middleware.requireAuthentication, function(req, res) {
 });
 
 /**
- * This route is for the first selection page
+ * This is the get route for the wishes. The wishes are found and populated on the
+ * wishes page.
  */
-router.get('/wishes/first', middleware.requireAuthentication, function(req, res) {
-  // var funeral_type = req.query.funeral_type;
-  if (!req.query.hasOwnProperty('funeral_type')) {
-    res.redirect('/wishes');
+router.get('/wishes', middleware.requireAuthentication, function(req, res) {
+  var where = {
+    userId: req.user.get('id')
   }
 
+  // TODO: maybe check if funeral type and funeral sub type have been completed yet?
 
+  db.wish.findAll({ where: where }).then(function(wishes) {
+    res.render("wishes", { wishes: wishes });
+  }, function(e) {
+    res.render("wishes");
+  });
+});
+
+/**
+ * This is the post route for the wishes. The wishes are added to the
+ * wishes table and then linked to the logged in user.
+ */
+router.post('/wishes', middleware.requireAuthentication, function(req, res) {
+  var wishes = req.body;
+
+  db.wish.bulkCreate(wishes).then(function() {
+    return db.wish.findAll();
+  }).then(function(wishes) {
+    var itemsProcessed = 0;
+    wishes.forEach(function(wish, index, array) {
+      db.wish.create(wish).then(function(wish) {
+        itemsProcessed++;
+        if (itemsProcessed === array.length) {
+          res.render('review');
+        }
+      });
+    });
+  });
 });
 
 module.exports = router;
