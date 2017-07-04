@@ -174,29 +174,11 @@ label.input-label {
 
 .message-display {
     position: fixed;
-    width: 75%;
+    width: 50%;
     left: 50%;
-    top: 15%;
-    margin-left: -37.5%;
+    top: 11%;
+    margin-left: -25%;
     z-index: 3;
-}
-
-/**************************
- *  MULTIPLE FORM FIELDS  *
- **************************/
-.dynamic-form {
-    margin-top: 50px;
-}
-.entry:not(:first-of-type) {
-    margin-top: 10px;
-}
-
-.glyphicon {
-    font-size: 12px;
-}
-
-#wishes-submit-button {
-    margin-top: 15px;
 }
 
 /**************************
@@ -217,7 +199,7 @@ label.input-label {
 /*************************
  ***  RESPONSIVE CODE  ***
  *************************/
-@media screen and (max-width:640px) {
+@media screen and (max-width: 480px) {
     #header-text {
         font-size: 70px;
         letter-spacing: 2px;
