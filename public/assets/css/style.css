@@ -155,11 +155,11 @@ label.input-label {
 
 #landing-bottom-content .container {
     margin-top: 40px;
-    margin-bottom: 110px;
+    margin-bottom: 100px;
 }
 
 #landing-bottom-content .col-sm-5 {
-    padding: 20px 0px;
+    /*padding: 20px 0px;*/
 }
 
 #landing-bottom-content img {
