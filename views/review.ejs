@@ -1,0 +1,96 @@
+<% include partials/header %>
+
+<div class="container review-content">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-xs-12 col-sm-10">
+            <div class="page-header">
+                <h1>Hello <%= data.first_name %>! Here are you selections.</h1>
+            </div>
+
+    <% if (data.funeral_type) { %>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Funeral Type
+                        <div class="panel-body review-button pull-right">
+                            <form action="/funeral-type" method="get">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <%= data.funeral_type %>
+                </div>
+            </div>
+        <% if (data.funeral_subtype) { %>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Funeral Subtype
+                        <div class="panel-body review-button pull-right">
+                            <% if (data.funeral_type === 'buried') { %>
+                            <form action="/buried" method="get">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                </div>
+                            </form>
+                            <% } else if (data.funeral_type === 'burned') { %>
+                            <form action="/burned" method="get">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                </div>
+                            </form>
+                            <% } %>
+                        </div>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <%= data.funeral_subtype %>
+                </div>
+            </div>
+        <% } else { %>
+            Oops, looks like you haven't selected a funeral subtype yet. Click on the review button to choose one now.
+            <% } %>
+    <% } else { %>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Funeral Type</h3>
+                </div>
+                <div class="panel-body">
+                    Oops, looks like you haven't selected a funeral type yet. Click on the review button to choose one now.
+                </div>
+            </div>
+    <% } %>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Your Wishes/Requests
+                        <div class="panel-body review-button pull-right">
+                            <form action="/wishes" method="get">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </h3>
+                </div>
+                <% if (data.wishes.length > 0) { %>
+                <ul class="list-group">
+                    <% for (var i=0; i < data.wishes.length; i++) { %>
+                    <li class="list-group-item"><%= data.wishes[i].wish %></li>
+                    <% } %>
+                </ul>
+                <% } else { %>
+                <div class="panel-body">
+                    You have no wishes/requests. Click on review to add your wishes.
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<% include partials/footer %>
