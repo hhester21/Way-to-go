@@ -124,9 +124,9 @@ router.post('/funeral-type', middleware.requireAuthentication, function(req, res
             where: where
         }).then(function (user) {
             user.update({ funeral_type: funeral_type }).then(function (user) {
-                if (funeral_type === 'buried') {
+                if (funeral_type === 'Buried') {
                     res.redirect('/buried');
-                } else if (funeral_type === 'burned') {
+                } else if (funeral_type === 'Burned') {
                     res.redirect('/burned');
                 }
             });
