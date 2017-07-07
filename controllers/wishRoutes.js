@@ -47,6 +47,7 @@ router.get('/welcome', middleware.requireAuthentication, function(req, res) {
  * wishes page.
  */
 router.get('/wishes', middleware.requireAuthentication, function(req, res) {
+    console.log('USER ID', req.user.get('id'));
   var where = {
     userId: req.user.get('id')
   }
@@ -208,10 +209,10 @@ router.get('/review', middleware.requireAuthentication, function(req, res) {
         where: where
     }).then(function(userData) {
         reviewData = _.pick(userData, 'first_name', 'last_name', 'funeral_type', 'funeral_subtype');
-        where = {
-            userId: userData.id
+        var whereWishes = {
+            userId: req.user.get('id')
         };
-        db.wish.findAll(where).then(function(wishes) {
+        db.wish.findAll({ where: whereWishes }).then(function(wishes) {
             reviewData.wishes = wishes;
             res.render('review', { data: reviewData });
         });
