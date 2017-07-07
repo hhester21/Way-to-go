@@ -37,13 +37,21 @@ body {
     width: 70%;
 }
 
-#header-text {
-    font-family: "Gotham-Light", "Gotham Light", "Gotham", Helvetica, Roboto, Arial, sans-serif;
-    font-size: 80px;
+#header-text{
+    font-family: 'Rouge Script', cursive, Helvetica, Roboto, Arial, sans-serif;
+    font-size: 160px;
     margin-top: 100px;
-    font-weight: 100;
-    letter-spacing: 2px;
+    font-weight: 400;
+    text-shadow:6px 6px 6px #000000;
 }
+
+#sub-text1{
+
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 30px;
+   margin-bottom:300;
+}
+
 
 #sub-text{
     font-family: 'Josefin Sans', sans-serif;
@@ -164,12 +172,23 @@ label.input-label {
     -ms-filter: "FlipH";
 }
 
+h1{
+
+  font-family: "Gotham-Light", "Gotham Light", "Gotham", Helvetica, Roboto, Arial, sans-serif;
+  color:#000000;
+}
+
+
 #landing-bottom-content .column-text {
-    font-family: "Gotham-Light", "Gotham Light", "Gotham", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Gotham-Light", "Gotham Light", "Gotham", Helvetica, Roboto, Arial, sans-serif;
 }
 
 #landing-bottom-content .column-text div {
-    font-size: 16pt;
+  font-size: 14pt;
+}
+
+#landing-bottom-content{
+  padding:40px;
 }
 
 .message-display {
