@@ -47,13 +47,16 @@ router.get('/welcome', middleware.requireAuthentication, function(req, res) {
  * wishes page.
  */
 router.get('/wishes', middleware.requireAuthentication, function(req, res) {
-    console.log('USER ID', req.user.get('id'));
   var where = {
     userId: req.user.get('id')
   }
 
   db.wish.findAll({ where: where }).then(function(wishes) {
-    res.render("wishes", { wishes: wishes });
+      db.user.findOne({
+          id: req.user.get('id')
+      }).then(function (user) {
+          res.render("wishes", { wishes: wishes, funeral_type: user.funeral_type });
+      });
   }, function(e) {
     res.render("wishes");
   });

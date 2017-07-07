@@ -1,13 +1,30 @@
-.selection-title {
+.selection-title, span.glyphicon-chevron-left {
     font-size: 44px;
+}
+
+.back-button {
+    text-align: left;
 }
 
 .funeral-type-content {
     padding-top: 60px;
 }
 
-.panel-default:hover {
-    border: 1px solid green;
+.panel-default:hover > img {
+    /*border: 1px solid green;*/
+    background-color: rgba(61, 33, 81, 0.7);
+}
+
+.panel-default,
+.panel-primary {
+    border-color: #080808;
+}
+
+.panel-primary>.panel-heading,
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #222;
+    border-color: #080808;
 }
 
 /* FUNERAL TYPE */

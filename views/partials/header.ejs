@@ -37,14 +37,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/wishes"><img src ="assets/images/way2go-logo.png"></a>
+        <a class="navbar-brand" href="/welcome"><img src ="assets/images/way2go-logo.png"></a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
             <% if (!currentUser) { %>
-          <li>
-            <a href="partials/test-guide.ejs" class="btn btn-link">Get Started</a>
-          </li>
           <li>
             <a href="#" class="btn btn-link" id="login-button">Log In</a>
           </li>
@@ -53,10 +50,10 @@
           </li>
             <% } else { %>
           <li>
-            <a href="/wishes">Welcome, <%= currentUser.first_name %>%></a>
+            <a href="/welcome" class="btn btn-link">Welcome, <%= currentUser.first_name %>%></a>
           </li>
           <li>
-            <a href="/logout">Logout</a>
+            <a href="/logout" class="btn btn-link">Logout</a>
           </li>
             <% } %>
         </ul>
