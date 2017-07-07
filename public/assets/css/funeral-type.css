@@ -1,0 +1,63 @@
+.selection-title {
+    font-size: 44px;
+}
+
+.funeral-type-content {
+    padding-top: 60px;
+}
+
+.panel-default:hover {
+    border: 1px solid green;
+}
+
+/* FUNERAL TYPE */
+
+#burned {
+    background-image:url(https://www.nature.com/article-assets/npg/nature/journal/v477/n7365/images/477415a-f1.2.jpg);
+    margin-top: 20px;
+}
+
+#buried {
+    background-image:url(https://s-media-cache-ak0.pinimg.com/736x/36/66/76/3666764312573a54adef888747d0c8f3.jpg);
+    margin-top: 20px;
+}
+
+.textOverImage {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    background-size: 100%;
+    background-position: center;
+    transition: 0.5s;
+}
+.textOverImage:hover {
+    background-size: 110%;
+}
+
+.textOverImage:after {
+    position: absolute;
+    top: 87%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: pre-wrap;
+    .overflow: hidden;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    padding: 0 10px;
+    content: attr(data-text);
+    transition:0.5s;
+}
+
+.textOverImage:hover:after {
+    top: 0;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.textOverImage:first-line {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.9em;
+}

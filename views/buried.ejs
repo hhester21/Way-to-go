@@ -1,0 +1,88 @@
+<% include partials/header %>
+
+    <div class="container funeral-type-content">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="text-center selection-title">BURIED</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Your Basic Burial</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="thumbnail">
+                                    <img src="./assets/images/partycoffin.jpeg" alt="Your Basic Burial">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                    </div>
+                    <div class="panel-body">
+                        <form action="/buried" method="post">
+                            <input type="hidden" name="type" value="basic burial"/>
+                            <div class="col-xs-12 text-center">
+                                <button type="submit" class="btn btn-primary">Select</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Egyptian Style</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="thumbnail">
+                                    <img src="./assets/images/partycoffin.jpeg" alt="Egyptian">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                    </div>
+                    <div class="panel-body">
+                        <form action="/buried" method="post">
+                            <input type="hidden" name="type" value="egyptian"/>
+                            <div class="col-xs-12 text-center">
+                                <button type="submit" class="btn btn-primary">Select</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Other</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="thumbnail">
+                                    <img src="./assets/images/partycoffin.jpeg" alt="Your Basic Burial">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                    </div>
+                    <div class="panel-body">
+                        <form action="/buried" method="post">
+                            <input type="hidden" name="type" value="other"/>
+                            <div class="col-xs-12 text-center">
+                                <button type="submit" class="btn btn-primary">Select</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% include partials/footer %>

@@ -1,0 +1,63 @@
+<% include partials/header %>
+
+<div class="container funeral-type-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center selection-title">Funeral Type</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Burial</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="thumbnail">
+                                <img src="./assets/images/partycoffin.jpeg" alt="burial">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                </div>
+                <div class="panel-body">
+                    <form action="/funeral-type" method="post">
+                        <input type="hidden" name="type" value="buried"/>
+                        <div class="col-xs-12 text-center">
+                            <button type="submit" class="btn btn-primary">Select</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Burned</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="thumbnail">
+                                <img src="./assets/images/partycoffin.jpeg" alt="Roman">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                </div>
+                <div class="panel-body">
+                    <form action="/funeral-type" method="post">
+                        <input type="hidden" name="type" value="burned"/>
+                        <div class="col-xs-12 text-center">
+                            <button type="submit" class="btn btn-primary">Select</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
