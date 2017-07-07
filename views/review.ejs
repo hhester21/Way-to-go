@@ -4,22 +4,28 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-xs-12 col-sm-10">
-            <div class="page-header">
-                <h1>Hello <%= data.first_name %>! Here are you selections.</h1>
+            <div class="page-header text-center">
+                <h1>Hello <%= data.first_name %>! Here are your selections:</h1>
             </div>
 
     <% if (data.funeral_type) { %>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Funeral Type
-                        <div class="panel-body review-button pull-right">
-                            <form action="/funeral-type" method="get">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
-                                </div>
-                            </form>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3 class="panel-title">Funeral Type</h3>
                         </div>
-                    </h3>
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-2">
+                            <div class="panel-body review-button pull-right">
+                                <form action="/funeral-type" method="get">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <%= data.funeral_type %>
@@ -28,23 +34,29 @@
         <% if (data.funeral_subtype) { %>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Funeral Subtype
-                        <div class="panel-body review-button pull-right">
-                            <% if (data.funeral_type === 'Buried') { %>
-                            <form action="/buried" method="get">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
-                                </div>
-                            </form>
-                            <% } else if (data.funeral_type === 'Burned') { %>
-                            <form action="/burned" method="get">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
-                                </div>
-                            </form>
-                            <% } %>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3 class="panel-title">Funeral Subtype</h3>
                         </div>
-                    </h3>
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-2">
+                            <div class="panel-body review-button pull-right">
+                                <% if (data.funeral_type === 'Buried') { %>
+                                <form action="/buried" method="get">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                    </div>
+                                </form>
+                                <% } else if (data.funeral_type === 'Burned') { %>
+                                <form action="/burned" method="get">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                    </div>
+                                </form>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <%= data.funeral_subtype %>
@@ -55,8 +67,20 @@
             <% } %>
     <% } else { %>
             <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Funeral Type</h3>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3 class="panel-title">Funeral Type</h3>
+                    </div>
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-2">
+                        <div class="panel-body review-button pull-right">
+                            <form action="/funeral-type" method="get">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
                     Oops, looks like you haven't selected a funeral type yet. Click on the review button to choose one now.
@@ -66,15 +90,21 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Your Wishes/Requests
-                        <div class="panel-body review-button pull-right">
-                            <form action="/wishes" method="get">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
-                                </div>
-                            </form>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3 class="panel-title">Wishes/Requests</h3>
                         </div>
-                    </h3>
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-2">
+                            <div class="panel-body review-button pull-right">
+                                <form action="/wishes" method="get">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <% if (data.wishes.length > 0) { %>
                 <ul class="list-group">
