@@ -4,8 +4,14 @@ By planning out exactly what you want for your final fairwell you relieve your l
 Our options include everything from burial, memorial/ cerimony as well as any special request for your big send off!
 </p>
 
+<p> <h1> Link to Heroku Deployment</h1>
+<br>
+https://serene-kings-canyon-75110.herokuapp.com/
+<br>
+</p>
+
 <h2>Languages & technology used</h2>
-HTML, CSS, Bootstrap, SQL, Javascript,node.js
+HTML, CSS, Bootstrap, MYSQL, Javascript,node.js,
 
 <h2>Project Cohorts</h2>
 <li>Kimberly Johnson</li>

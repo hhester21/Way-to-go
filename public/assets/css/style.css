@@ -1,57 +1,40 @@
 /*Navigation Style*/
 .navbar {
-
-border-radius: 0px;
+    border-radius: 0px;
 }
 
 .navbar-inverse {
     background-color: #222;
-    border-color: #080808;
-    height: 100px;
-}
-/*Nav bar header*/
-.navbar-header{
-  padding:15px;
+    border-bottom: 2px solid #080808;
 }
 
-.navbar-inverse .navbar-nav>li>a{
-
-  font-size:18px;
-  font-weight:bold;
-  color:#ffffff;
-  text-transform: uppercase;
-
-
+.navbar-header img {
+    width: 100%;
+    border: 2px solid #080808;
+    border-radius: 50%;
 }
 
-/*Logo*/
-.navbar-brand>img {
-    display: block;
-    margin-top: -20px;
+.navbar-inverse .navbar-nav>li>a {
+    font-weight:bold;
+    color:#ffffff;
+    text-transform: uppercase;
 }
-/*Nav bar links changed later*/
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-/*padding:10px;*/
-margin-top:18px;
-}
-
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 
 .header-content {
     text-align: center;
     margin: auto;
     width: 70%;
-    padding: 10px;
 }
 
 #header-text{
@@ -76,100 +59,117 @@ body {
     margin-bottom: 100px;
 }
 
-  /* Set the fixed height of the footer here */
+/* Set the fixed height of the footer here */
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 175px;
-  background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    /*height: 175px;*/
+    background-color: #222;
+    border-top: #080808 2px solid;
+    color: #fff;
+    padding-bottom: 15px;
 }
 
 .text-muted {
-  text-align:center;
+    text-align:center;
 }
 
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-body > .container {
-  padding: 60px 15px 0;
-}
-.container .text-muted {
-  margin: 20px 0;
+/******************************
+ *  STYLES FOR FOOTER SLIDER  *
+ ******************************/
+#jssor_1 {
+    position: relative;
+    margin: 0 auto;
+    top: 0px;
+    left: 0px;
+    width: 980px;
+    height: 100px;
+    overflow: hidden;
+    visibility: hidden;
 }
 
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+#slides {
+    cursor: default;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 980px;
+    height: 100px;
+    overflow: hidden;
 }
 
-code {
-  font-size: 80%;
+.featuredLogos {
+    color:#ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Gotham-Light", "Gotham Light", "Gotham", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    text-transform: uppercase;
 }
 
 /*******************************
  *  STYLES FOR REGISTER MODAL  *
  *******************************/
 .form-group.required .required-field:after {
-  content: "*";
-  color: red;
+    content: "*";
+    color: red;
 }
 
 label.input-label {
-  width: 96%;
-  font-weight: 400;
+    width: 96%;
+    font-weight: 400;
 }
 
-/*As Featured In Text*/
-.featuredLogos{
-            color:#ffffff;
-            text-align: center;
-            font-weight:bold;
-            font-family: Arial;
-            font-size:18px;
-            padding:10px;
+.modal-header h4 {
+    font-size: 18pt;
 }
 
 /*********************
  *  LANDING CONTENT  *
  *********************/
 #landing-content {
-  margin-top: -20px;
-  padding-bottom: 80px;
-  background-color: black;
-  color: white;
-  background: linear-gradient(rgba(99, 100, 102, 0.7), rgba(48, 49, 51, 0.7)), url(../images/burial.gif) center no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
+    margin-top: -20px;
+    padding-bottom: 80px;
+    background-color: black;
+    color: white;
+    /*background: linear-gradient(rgba(99, 100, 102, 0.7), rgba(48, 49, 51, 0.7)), url(../images/burial.gif) center no-repeat;*/
+    /*background: linear-gradient(rgba(141, 13, 11, 0.7), rgba(48, 49, 51, 0.7)), url(../images/burial.gif) center no-repeat;*/
+    background: linear-gradient(rgba(61, 33, 81, 0.7), rgba(48, 49, 51, 0.7)), url(../images/burial.gif) center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-bottom: 2px solid #080808;
 }
 
 #landing-content form {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 #landing-bottom-content .container {
-  margin-top: 40px;
-  margin-bottom: 110px;
+    margin-top: 40px;
+    margin-bottom: 110px;
 }
 
 #landing-bottom-content .col-sm-5 {
-  padding: 20px 0px;
+    padding: 20px 0px;
 }
 
 #landing-bottom-content img {
-  width: 100%;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+    width: 100%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
 h1{
@@ -192,8 +192,35 @@ h1{
 }
 
 .message-display {
-  position: fixed;
-  width: 75%;
-  left: 50%;
-  margin-left: -37.5%;
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    top: 11%;
+    margin-left: -25%;
+    z-index: 3;
+}
+
+/**************************
+ ***  LOGGED IN FOOTER  ***
+ **************************/
+.logged-in-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #222;
+    border-top: #080808 2px solid;
+    color: #fff;
+    padding-top: 15px;
+}
+
+/*************************
+ ***  RESPONSIVE CODE  ***
+ *************************/
+@media screen and (max-width: 480px) {
+    #header-text {
+        font-size: 70px;
+        letter-spacing: 2px;
+    }
 }

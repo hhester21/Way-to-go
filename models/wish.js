@@ -8,15 +8,19 @@ module.exports = function(sequelize, DataTypes) {
     }
   },
     {
-    classMethods: {
-      associate: function(models) {
-        Wish.belongsTo(models.user, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
+      indexes: [{
+          unique: true,
+          fields: ['wish', 'userId']
+      }],
+      classMethods: {
+        associate: function(models) {
+          Wish.belongsTo(models.user, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+        }
       }
-    }
   });
   return Wish;
 };
