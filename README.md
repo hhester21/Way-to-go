@@ -1,5 +1,5 @@
-<h1>Way to go</h1>
-<p> Way to Go is and APP that provides your loved ones with your well planned wishes once you have gone to your final destitnation.
+<h1>Way 2 go</h1>
+<p> Way 2 Go is and APP that provides your loved ones with your well planned wishes once you have gone to your final destitnation.
 By planning out exactly what you want for your final fairwell you relieve your loved ones from the burden of guessing which way you want to go.
 Our options include everything from burial, memorial/ cerimony as well as any special request for your big send off!
 </p>
