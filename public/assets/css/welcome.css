@@ -1,3 +1,24 @@
 .welcome-content {
     margin-top: 45px;
 }
+
+.welcome-text {
+    font-family: 'Rouge Script', cursive, Helvetica, Roboto, Arial, sans-serif;
+    font-size: 160px;
+    font-weight: 400;
+    text-shadow: 2px 2px 6px #000000;
+}
+
+h1.text-center.selection-title {
+    font-family: 'Rouge Script', cursive, Helvetica, Roboto, Arial, sans-serif;
+    font-size: 120px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.review-title > h1 {
+    font-family: 'Rouge Script', cursive, Helvetica, Roboto, Arial, sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    ext-shadow: 1px 1px 1px #000000;
+}
