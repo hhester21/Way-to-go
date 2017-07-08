@@ -33,7 +33,10 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                        <p>In your basic burial, bodies are often buried wrapped in a shroud or placed in a coffin (or in some cases, a casket). A larger container may be used, such as a ship, but that sounds expensive. In the United States, coffins are usually covered by a grave liner or a burial vault, which prevents the coffin from collapsing under the weight of the earth or floating away during a flood.</p>
+
+                        <p>These containers slow the decomposition process by (partially) physically blocking decomposing bacteria and other organisms from accessing the corpse.</p>
+                        <p>So basically your typical, in a coffin kind of thing.</p>
                     </div>
                     <div class="panel-body">
                         <form action="/buried" method="post">
@@ -62,7 +65,9 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                        <p>Mummification is one of the defining customs in ancient Egyptian society for people today. The practice of preserving the human body is believed to be a quintessential feature of Egyptian life.</p>
+                        <p>First, the brain is removed by passing an iron hook through the nose into the cranium and retracting it by the same route; the gray matter is discarded. Modern mummy excavations have shown that instead of an iron hook inserted through the nose, a rod is used to liquefy the brain via the cranium, which then drains out the nose by gravity.</p>
+                        <p>If all this sounds like too much, you can just be placed in a sarcophagus.</p>
                     </div>
                     <div class="panel-body">
                         <form action="/buried" method="post">
@@ -76,26 +81,28 @@
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading text-center"><h3 class="panel-title">Other</h3></div>
+                    <div class="panel-heading text-center"><h3 class="panel-title">Tree Pod Burial (seriously)</h3></div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="thumbnail">
-                                    <% if (type && type === 'Other') { %>
-                                    <img src="./assets/images/greek-roll.png" alt="Other">
+                                    <% if (type && type === 'Tree Pod') { %>
+                                    <img src="./assets/images/greek-roll.png" alt="Tree Pod">
                                     <% } else { %>
-                                    <img src="./assets/images/greek-package.png" alt="Other">
+                                    <img src="./assets/images/greek-package.png" alt="Tree Pod">
                                     <% } %>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem eum itaque molestias necessitatibus nobis veritatis? Dicta ducimus ex fugiat in laboriosam, libero necessitatibus nostrum, optio perferendis quasi quidem veritatis.
+                        <p>Another method of natural burial is being developed to plant the human body in fetal position inside an egg shaped pod. The pod containing the body will form a biodegradable capsule that will not harm the surrounding earth. The biodegradable capsule doubles as a seed which can be customized to grow into either a birch, maple, or eucalyptus tree.</p>
+                        <p>The goal of this method is to create parks full of trees that loved ones can walk through and mourn, as opposed to a graveyard full of tombstones. This method aims to return the body to the earth in the most environmentally friendly way possible</p>
+                        <p>That sounds nice, doesn't it?</p>
                     </div>
                     <div class="panel-body">
                         <form action="/buried" method="post">
-                            <input type="hidden" name="type" value="Other"/>
+                            <input type="hidden" name="type" value="Tree Pod"/>
                             <div class="col-xs-12 text-center">
                                 <button type="submit" class="btn btn-primary">Select</button>
                             </div>
