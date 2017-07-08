@@ -124,10 +124,10 @@ router.get('/funeral-type', middleware.requireAuthentication, function(req, res)
         if (user.funeral_type) {
             res.render('funeral-type', { type: user.funeral_type });
         } else {
-            res.render('funeral-type');
+            res.render('funeral-type', { type: null });
         }
     }, function(e) {
-        res.render('funeral-type');
+        res.render('funeral-type', { type: null });
     });
 });
 
@@ -172,10 +172,10 @@ router.get('/buried', middleware.requireAuthentication, function(req, res) {
         if (user.funeral_subtype) {
             res.render('buried', { type: user.funeral_subtype });
         } else {
-            res.render('buried');
+            res.render('buried', { type: null });
         }
     }, function(e) {
-        res.render('buried');
+        res.render('buried', { type: null });
     });
 });
 
@@ -215,10 +215,10 @@ router.get('/burned', middleware.requireAuthentication, function(req, res) {
         if (user.funeral_subtype) {
             res.render('burned', { type: user.funeral_subtype });
         } else {
-            res.render('burned');
+            res.render('burned', { type: null });
         }
     }, function(e) {
-        res.render('burned');
+        res.render('burned', { type: null });
     });
 });
 
