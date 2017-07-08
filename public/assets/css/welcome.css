@@ -22,3 +22,7 @@ h1.text-center.selection-title {
     font-weight: 400;
     ext-shadow: 1px 1px 1px #000000;
 }
+
+.welcome-jumbotron {
+    padding-top: 0px !important;
+}
