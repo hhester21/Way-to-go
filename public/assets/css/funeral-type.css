@@ -10,9 +10,14 @@
     padding-top: 60px;
 }
 
-.panel-default:hover > img {
-    /*border: 1px solid green;*/
-    background-color: rgba(61, 33, 81, 0.7);
+.panel-default.selected > .thumbnail {
+    border: 1px solid #337ab7;
+}
+
+.panel-default:hover {
+    border: 1px solid #337ab7;
+    /*background-color: rgba(61, 33, 81, 0.7);*/
+    animation: bounce 1s;
 }
 
 .panel-default,
@@ -77,4 +82,21 @@
     color: #fff;
     font-weight: bold;
     font-size: 1.9em;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
 }

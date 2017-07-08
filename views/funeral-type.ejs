@@ -9,12 +9,16 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"><h3 class="panel-title">Burial</h3></div>
+                <div class="panel-heading text-center"><h3 class="panel-title">Buried</h3></div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="thumbnail">
-                                <img src="./assets/images/man-coffin.png" alt="Burial">
+                                <% if (type && type === 'Buried') { %>
+                                <img src="./assets/images/basic-roll.png" alt="Burial">
+                                <% } else { %>
+                                <img src="./assets/images/basic-package.png" alt="Burial">
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,11 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="thumbnail">
-                                <img src="./assets/images/burning-feet-logo.png" alt="Roman">
+                                <% if (type && type === 'Burned') { %>
+                                <img src="./assets/images/cremation-roll.png" alt="Roman">
+                                <% } else { %>
+                                <img src="./assets/images/cremation-package.png" alt="Roman">
+                                <% } %>
                             </div>
                         </div>
                     </div>

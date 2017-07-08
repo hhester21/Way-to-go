@@ -31,7 +31,11 @@ router.get('/welcome', middleware.requireAuthentication, function(req, res) {
       res.render('welcome');
     } else {
       if (!userData.funeral_subtype) {
-        res.redirect('/funeral-sub-type');
+          if (userData.funeral_type === 'Buried') {
+              res.redirect('/buried');
+          } else if (userData.funeral_type === 'Burned') {
+              res.redirect('/burned');
+          }
       } else {
         res.redirect('/review');
       }
@@ -110,7 +114,21 @@ router.post('/wishes', middleware.requireAuthentication, function(req, res) {
  * Renders funeral type selection page
  */
 router.get('/funeral-type', middleware.requireAuthentication, function(req, res) {
-    res.render('funeral-type');
+    var where = {
+        id: req.user.get('id')
+    };
+
+    db.user.findOne({
+        where: where
+    }).then(function (user) {
+        if (user.funeral_type) {
+            res.render('funeral-type', { type: user.funeral_type });
+        } else {
+            res.render('funeral-type');
+        }
+    }, function(e) {
+        res.render('funeral-type');
+    });
 });
 
 
@@ -144,7 +162,21 @@ router.post('/funeral-type', middleware.requireAuthentication, function(req, res
  * Renders buried options page
  */
 router.get('/buried', middleware.requireAuthentication, function(req, res) {
-    res.render('buried');
+    var where = {
+        id: req.user.get('id')
+    };
+
+    db.user.findOne({
+        where: where
+    }).then(function (user) {
+        if (user.funeral_subtype) {
+            res.render('buried', { type: user.funeral_subtype });
+        } else {
+            res.render('buried');
+        }
+    }, function(e) {
+        res.render('buried');
+    });
 });
 
 /**
@@ -173,7 +205,21 @@ router.post('/buried', middleware.requireAuthentication, function(req, res) {
  * Renders burned options page
  */
 router.get('/burned', middleware.requireAuthentication, function(req, res) {
-    res.render('burned');
+    var where = {
+        id: req.user.get('id')
+    };
+
+    db.user.findOne({
+        where: where
+    }).then(function (user) {
+        if (user.funeral_subtype) {
+            res.render('burned', { type: user.funeral_subtype });
+        } else {
+            res.render('burned');
+        }
+    }, function(e) {
+        res.render('burned');
+    });
 });
 
 /**
