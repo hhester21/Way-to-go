@@ -1,5 +1,7 @@
 <% include partials/header %>
 
+<link rel="stylesheet" type="text/css" href="./assets/css/background.css">
+
 <div class="container review-content">
     <div class="row">
         <div class="col-sm-1"></div>
@@ -20,7 +22,7 @@
                             <div class="panel-body review-button pull-right">
                                 <form action="/funeral-type" method="get">
                                     <div class="col-xs-12">
-                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                        <button type="submit" class="btn btn-primary btn-xs">Review</button>
                                     </div>
                                 </form>
                             </div>
@@ -44,13 +46,13 @@
                                 <% if (data.funeral_type === 'Buried') { %>
                                 <form action="/buried" method="get">
                                     <div class="col-xs-12">
-                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                        <button type="submit" class="btn btn-primary btn-xs">Review</button>
                                     </div>
                                 </form>
                                 <% } else if (data.funeral_type === 'Burned') { %>
                                 <form action="/burned" method="get">
                                     <div class="col-xs-12">
-                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                        <button type="submit" class="btn btn-primary btn-xs">Review</button>
                                     </div>
                                 </form>
                                 <% } %>
@@ -61,6 +63,32 @@
                 <div class="panel-body">
                     <%= data.funeral_subtype %>
                 </div>
+                <div class="panel-body">
+                    <% if (data.funeral_subtype === 'Basic Burial') { %>
+                    <p>In your basic burial, bodies are often buried wrapped in a shroud or placed in a coffin (or in some cases, a casket). A larger container may be used, such as a ship, but that sounds expensive. In the United States, coffins are usually covered by a grave liner or a burial vault, which prevents the coffin from collapsing under the weight of the earth or floating away during a flood.</p>
+
+                    <p>These containers slow the decomposition process by (partially) physically blocking decomposing bacteria and other organisms from accessing the corpse.</p>
+                    <p>So basically your typical, in a coffin kind of thing.</p>
+                    <% } else if (data.funeral_subtype === 'Egyptian') { %>
+                    <p>Mummification is one of the defining customs in ancient Egyptian society for people today. The practice of preserving the human body is believed to be a quintessential feature of Egyptian life.</p>
+                    <p>First, the brain is removed by passing an iron hook through the nose into the cranium and retracting it by the same route; the gray matter is discarded. Modern mummy excavations have shown that instead of an iron hook inserted through the nose, a rod is used to liquefy the brain via the cranium, which then drains out the nose by gravity.</p>
+                    <p>If all this sounds like too much, you can just be placed in a sarcophagus.</p>
+                    <% } else if (data.funeral_subtype === 'Tree Pod') { %>
+                    <p>Another method of natural burial is being developed to plant the human body in fetal position inside an egg shaped pod. The pod containing the body will form a biodegradable capsule that will not harm the surrounding earth. The biodegradable capsule doubles as a seed which can be customized to grow into either a birch, maple, or eucalyptus tree.</p>
+                    <p>The goal of this method is to create parks full of trees that loved ones can walk through and mourn, as opposed to a graveyard full of tombstones. This method aims to return the body to the earth in the most environmentally friendly way possible</p>
+                    <p>That sounds nice, doesn't it?</p>
+                    <% } else if (data.funeral_subtype === 'Cremation') { %>
+                    <p>The cremation occurs in a crematory that is housed within a crematorium and comprises one or more furnaces. A cremator is an industrial furnace that is able to generate temperatures of 870–980 °C (1,600–1,800 °F) to ensure disintegration of the corpse. A crematorium may be part of a chapel or a funeral home or may be an independent facility or a service offered by a cemetery.</p>
+                    <p>Modern cremator fuels include oil, natural gas, propane, and, in some areas like Hong Kong, coal gas. However, coal and coke were used until the early 1960s. Random fact.</p>
+                    <% } else if (data.funeral_subtype === 'Viking') { %>
+                    <p>In Norse funerals, or the burial customs of Viking Age North Germanic Norsemen (early medieval Scandinavians), it was common to burn the corpse and the grave offerings on a pyre, in which the temperature reached 1,400 °C (2,550 °F)—much higher than modern crematorium furnaces attain. Only some incinerated fragments of metal and of human bones would remain. The pyre was constructed to make the pillar of smoke as massive as possible, in order to elevate the deceased to the afterlife.</p>
+                    <p>You'll pretty much be going out in a massive bonfire.</p>
+                    <% } else if (data.funeral_subtype === 'Greek') { %>
+                    <p>The practice of cremation on open fires was introduced to the Western world by the Greeks. Cremation was adopted to ensure soldiers slain in alien territory a homeland funeral attended by loved ones. Corpses were incinerated on the battlefield; then the ashes were gathered up and sent to the homeland for ceremonial entombment. Cremation became so closely associated with valour and manly virtue, patriotism, and military glory that it was regarded as the only fitting conclusion for an epic life.</p>
+                    <p>Epic.</p>
+                    <% } %>
+                </div>
+
             </div>
         <% } else { %>
             Oops, looks like you haven't selected a funeral subtype yet. Click on the review button to choose one now.
@@ -76,7 +104,7 @@
                         <div class="panel-body review-button pull-right">
                             <form action="/funeral-type" method="get">
                                 <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                    <button type="submit" class="btn btn-primary btn-xs">Review</button>
                                 </div>
                             </form>
                         </div>
@@ -99,7 +127,7 @@
                             <div class="panel-body review-button pull-right">
                                 <form action="/wishes" method="get">
                                     <div class="col-xs-12">
-                                        <button type="submit" class="btn btn-warning btn-xs">Review</button>
+                                        <button type="submit" class="btn btn-primary btn-xs">Review</button>
                                     </div>
                                 </form>
                             </div>
